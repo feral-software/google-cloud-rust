@@ -8,6 +8,7 @@ members = [
     "googleapis",
     "spanner",
     "pubsub",
+    "cloud-tasks",
     "storage",
     "bigquery",
     "spanner-derive",

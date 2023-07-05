@@ -65,4 +65,11 @@ pub mod cloud {
             pub mod v1;
         }
     }
+
+    #[cfg(feature = "cloud-tasks")]
+    #[path = ""]
+    pub mod tasks {
+        #[path = "google.cloud.tasks.v2.rs"]
+        pub mod v2;
+    }
 }

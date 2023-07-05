@@ -1,0 +1,32 @@
+[package]
+name = "google-cloud-tasks"
+version = "0.1.0"
+authors = ["yoshidan <naohiro.y@gmail.com>"]
+edition = "2021"
+repository = "https://github.com/yoshidan/google-cloud-rust/tree/main/cloud-tasks"
+keywords = [
+    "gcp",
+    "pubsub",
+    "googleapis",
+    "google-cloud-rust",
+    "google-cloud-tasks",
+]
+license = "MIT"
+readme = "README.md"
+description = "Google Cloud Platform Cloud Tasks client library."
+documentation = "https://docs.rs/google-cloud-pubsub/latest/google_cloud_tasks/"
+
+[dependencies]
+thiserror = "1.0"
+
+google-cloud-gax = { version = "0.15", path = "../foundation/gax", default-features = false }
+google-cloud-googleapis = { version = "0.11", path = "../googleapis", features = [
+    "cloud-tasks",
+] }
+google-cloud-token = { version = "0.1", path = "../foundation/token" }
+
+google-cloud-auth = { optional = true, version = "0.12", path = "../foundation/auth", default-features = false }
+
+[features]
+default = ["auth"]
+auth = ["google-cloud-auth"]
